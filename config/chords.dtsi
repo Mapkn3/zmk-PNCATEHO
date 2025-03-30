@@ -2,40 +2,40 @@
 combo_l_##NAME { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <BINDINGS>; \
-	key-positions = <LEFT_KEYPOS>; \
+	key-positions = <KEYPOS>; \
 	layers = <COMBO_LAYERS>; \
 }; \
 combo_li_##NAME { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <INNER_BINDINGS>; \
-	key-positions = <LEFT_KEYPOS LIT>; \
+	key-positions = <KEYPOS LIT>; \
 	layers = <COMBO_LAYERS>; \
 }; \
 combo_lo_##NAME { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <OUTER_BINDINGS>; \
-	key-positions = <LEFT_KEYPOS LOT>; \
+	key-positions = <KEYPOS LOT>; \
 	layers = <COMBO_LAYERS>; \
 }; \
 combo_lb_##NAME { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <BOTH_BINDINGS>; \
-	key-positions = <LEFT_KEYPOS LIT LOT>; \
+	key-positions = <KEYPOS LIT LOT>; \
 	layers = <COMBO_LAYERS>; \
 }; \
 
-combo_l_space { \
-	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp SPACE>; \
-	key-positions = <SIT>; \
-	layers = <COMBO_LAYERS>; \
+combo_l_space {
+	timeout-ms = <COMBO_TIMEOUT>;
+	bindings = <&kp SPACE>;
+	key-positions = <SIT>;
+	layers = <COMBO_LAYERS>;
 };
 
-combo_l_bspc { \
-	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp BSPC>; \
-	key-positions = <SOT>; \
-	layers = <COMBO_LAYERS>; \
+combo_l_bspc {
+	timeout-ms = <COMBO_TIMEOUT>;
+	bindings = <&kp BSPC>;
+	key-positions = <SOT>;
+	layers = <COMBO_LAYERS>;
 };
 
 //    (name,   press,       inner,         out,         both,          chord)
