@@ -13,6 +13,12 @@
 // CONFIG
 #define COMBO_TIMEOUT 70
 #define COMBO_LAYERS 0
+#define COMBO_LAYER 0
+#define SELECTION_LAYER 1
+#define NAVIGATION_LAYER 2
+#define BLUETOOTH_LAYER 3
+#define KBCTRL_LAYER 4
+#define RGB_LAYER 5
 #define STICKY_TIMEOUT 500
 
 // SWITCHES
@@ -56,11 +62,57 @@
   keymap {
     compatible = "zmk,keymap";
 
-    default_layer {
+    combo_layer {
+      label = "combo";
       bindings = <
         &none &none &none &none
         &none &none &none &none
                           &none &none
+      >;
+    };
+
+    selection_layer {
+      label = "selection";
+      bindings = <
+        &to NAVIGATION_LAYER &none &none           &to BLUETOOTH_LAYER
+        &to RGB_LAYER        &none &none           &to KBCTRL_LAYER
+                                   &to COMBO_LAYER &none
+      >;
+    };
+
+    navigation_layer {
+      label = "navigation";
+      bindings = <
+        &kp PG_UP   &kp END  &kp UP          &kp HOME
+        &kp PG_DOWN &kp LEFT &kp DOWN        &kp RIGHT
+                             &to COMBO_LAYER &none
+      >;
+    };
+
+    bluetooth_layer {
+      label = "bluetooth";
+      bindings = <
+        &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2    &bt BT_SEL 3
+        &bt BT_CLR   &none        &bt BT_PRV      &bt BT_NXT
+                                  &to COMBO_LAYER &none
+      >;
+    };
+
+    kbctrl_layer {
+      label = "kbctrl";
+      bindings = <
+        &bootloader &none &none           &studio_unlock
+        &sys_reset  &none &none           &none
+                          &to COMBO_LAYER &none
+      >;
+    };
+
+    rgb_layer {
+      label = "rgb";
+      bindings = <
+        &ext_power EP_TOG &rgb_ug RGB_BRI &rgb_ug RGB_SPI &rgb_ug RGB_EFF
+        &none             &rgb_ug RGB_BRD &rgb_ug RGB_SPD &rgb_ug RGB_EFR
+                                          &to COMBO_LAYER &none
       >;
     };
   };

@@ -39,5 +39,6 @@ TCOMBO(DEL,    &kp DEL,     &none,         &kp LC(DEL), &none,         SA SC)
 TCOMBO(ESC,    &kp ESC,     &none,         &kp N1,      &none,         SE ST)
 TCOMBO(TAB,    &kp TAB,     &kp LA(TAB),   &kp LC(TAB), &none,         SN SP)
 TCOMBO(ENTER,  &kp ENTER,   &kp LS(ENTER), &none,       &none,         SO SH)
-TCOMBO(boot,   &none,       &none,  &ext_power EP_TOG,  &bootloader,   SN SA SE SO)
-TCOMBO(BT,     &bt BT_SEL 0,&bt BT_SEL 1,  &bt BT_SEL 2,&bt BT_CLR,    SP SC ST SH)
+
+TCOMBO(SLCT,   &to SELECTION_LAYER, &none, &none,       &none,   SN SA SE SO)
+
