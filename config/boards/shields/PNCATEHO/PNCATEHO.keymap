@@ -55,9 +55,9 @@
 
     default_layer {
       bindings = <
-        &none &none &none &none               &none &none &none &none     
-        &none &none &none &none               &none &none &none &none     
-                          &none &none   &none &none &none &none     
+        &none &none &none &none
+        &none &none &none &none
+                          &none &none
       >;
     };
   };
