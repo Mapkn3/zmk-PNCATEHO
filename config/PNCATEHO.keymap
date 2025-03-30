@@ -35,7 +35,22 @@
 / {
   combos {
     compatible = "zmk,combos";
-    #include "boards/shields/PNCATEHO/chords.dtsi"
+
+    combo_l_space {
+        timeout-ms = <COMBO_TIMEOUT>;
+        bindings = <&kp SPACE>;
+        key-positions = <SIT>;
+        layers = <COMBO_LAYERS>;
+    };
+
+    combo_l_bspc {
+        timeout-ms = <COMBO_TIMEOUT>;
+        bindings = <&kp BSPC>;
+        key-positions = <SOT>;
+        layers = <COMBO_LAYERS>;
+    };
+
+    #include "chords.dtsi"
   };
 
   keymap {
