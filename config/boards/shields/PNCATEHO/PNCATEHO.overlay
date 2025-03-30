@@ -5,6 +5,7 @@
  */
 
 #include "PNCATEHO.dtsi"
+#include <dt-bindings/led/led.h>
 
 // rgb,SPI
 &pinctrl {
