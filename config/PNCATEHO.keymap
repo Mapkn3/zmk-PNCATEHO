@@ -83,8 +83,8 @@
     navigation_layer {
       label = "navigation";
       bindings = <
-        &kp PG_UP   &kp END  &kp UP          &kp HOME
-        &kp PG_DOWN &kp LEFT &kp DOWN        &kp RIGHT
+        &kp PG_UP &kp END  &kp UP            &kp HOME
+        &kp PG_DN &kp LEFT &kp DOWN          &kp RIGHT
                              &to COMBO_LAYER &none
       >;
     };
