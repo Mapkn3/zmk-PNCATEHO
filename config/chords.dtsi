@@ -8,19 +8,19 @@ combo_l_##NAME { \
 combo_li_##NAME { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <INNER_BINDINGS>; \
-	key-positions = <KEYPOS LIT>; \
+	key-positions = <KEYPOS SIT>; \
 	layers = <COMBO_LAYERS>; \
 }; \
 combo_lo_##NAME { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <OUTER_BINDINGS>; \
-	key-positions = <KEYPOS LOT>; \
+	key-positions = <KEYPOS SOT>; \
 	layers = <COMBO_LAYERS>; \
 }; \
 combo_lb_##NAME { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <BOTH_BINDINGS>; \
-	key-positions = <KEYPOS LIT LOT>; \
+	key-positions = <KEYPOS SIT SOT>; \
 	layers = <COMBO_LAYERS>; \
 }; \
 
@@ -34,7 +34,7 @@ combo_l_space {
 combo_l_bspc {
 	timeout-ms = <COMBO_TIMEOUT>;
 	bindings = <&kp BSPC>;
-	key-positions = <SET>;
+	key-positions = <SOT>;
 	layers = <COMBO_LAYERS>;
 };
 
