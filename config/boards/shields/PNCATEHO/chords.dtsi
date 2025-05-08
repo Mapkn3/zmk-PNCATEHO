@@ -116,5 +116,3 @@ TCOMBO(TAB,    &kp TAB,     &kp LA(TAB),     &kp LC(TAB),   &none,         TLP B
 TCOMBO(ENTER,  &kp ENTER,   &kp LS(ENTER),   &kp LC(ENTER), &none,         TLI BLI,         TRI BRI)
 TCOMBO(boot,   &none,       &none,       &ext_power EP_OFF, &bootloader,   TLP TLR TLM TLI, TRP TRR TRM TRI)
 TCOMBO(BT,     &bt BT_SEL 0,&bt BT_SEL 1,    &bt BT_SEL 2,  &bt BT_CLR,    BLP BLR BLM BLI, BRP BRR BRM BRI)
-
-
