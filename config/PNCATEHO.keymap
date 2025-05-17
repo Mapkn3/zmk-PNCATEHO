@@ -20,6 +20,10 @@
 #define BLUETOOTH_LAYER 3
 #define KBCTRL_LAYER 4
 #define RGB_LAYER 5
+#define LOL_MAIN_LAYER 6
+#define LOL_NUMBERS_LAYER 7
+#define LOL_ADDITIONAL_LAYER 8
+#define LOL_FN_LAYER 9
 #define STICKY_TIMEOUT 500
 
 // SWITCHES
@@ -60,6 +64,15 @@
     #include "chords.dtsi"
   };
 
+  behaviors {
+    lol_ctrl_add_fn: lol_ctrl_add_fn {
+      compatible = "zmk,behavior-tap-dance";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&mo LOL_ADDITIONAL_LAYER>, <&kp LCTRL> ,<&mo LOL_FN_LAYER>;
+    };
+  };
+
   keymap {
     compatible = "zmk,keymap";
 
@@ -75,9 +88,9 @@
     selection_layer {
       label = "selection";
       bindings = <
-        &to NAVIGATION_LAYER &none &none           &to BLUETOOTH_LAYER
-        &to RGB_LAYER        &none &none           &to KBCTRL_LAYER
-                                   &to COMBO_LAYER &none
+        &to NAVIGATION_LAYER &to LOL_MAIN_LAYER &none           &to BLUETOOTH_LAYER
+        &to RGB_LAYER        &none              &none           &to KBCTRL_LAYER
+                                                &to COMBO_LAYER &none
       >;
     };
 
@@ -114,6 +127,42 @@
         &ext_power EP_TOG &rgb_ug RGB_BRI &rgb_ug RGB_SPI &rgb_ug RGB_EFF
         &none             &rgb_ug RGB_BRD &rgb_ug RGB_SPD &rgb_ug RGB_EFR
                                           &to COMBO_LAYER &none
+      >;
+    };
+
+    lol_main_layer {
+      label = "lol-main";
+      bindings = <
+        &kp Q &kp W &kp E &kp R
+        &kp A &kp S &kp D &kp F
+                    &mo LOL_NUMBERS_LAYER &lol_add_ctrl_fn
+      >;
+    };
+
+    lol_numbers_layer {
+      label = "lol-numbers";
+      bindings = <
+        &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3    &kp NUMBER_4
+        &kp NUMBER_5 &kp NUMBER_6 &kp NUMBER_7    &kp NUMBER_8
+                                  &none           &kp V
+      >;
+    };
+
+    lol_additional_layer {
+      label = "lol-additional";
+      bindings = <
+        &kp ESC &none &none &to COMBO_LAYER
+        &kp TAB &none &none &none
+                      &none &none
+      >;
+    };
+
+    lol_fn_layer {
+      label = "lol-fn";
+      bindings = <
+        &kp F1 &kp F2 &kp F3 &kp F4
+        &kp F5 &kp F6 &kp F7 &kp F8
+                      &none  &none
       >;
     };
   };
