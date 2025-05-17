@@ -65,7 +65,7 @@
   };
 
   behaviors {
-    lol_ctrl_add_fn: lol_ctrl_add_fn {
+    lol_add_ctrl_fn: lol_add_ctrl_fn {
       compatible = "zmk,behavior-tap-dance";
       #binding-cells = <0>;
       tapping-term-ms = <200>;
